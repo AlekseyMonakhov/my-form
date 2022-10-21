@@ -1,17 +1,15 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 import FormInput from './components/FormInput';
 
 function App() {
-  const [values, setValues] = useState(
-    {
-      Username: "",
-      email: "",
-      birthday: "",
-      password: "",
-      confirmPassword: "",
-    }
-  );
+  const [values, setValues] = useState({
+    Username: "",
+    email: "",
+    birthday: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   const inputs = [
     {
@@ -19,7 +17,8 @@ function App() {
       name: "Username",
       type: "text",
       placeholder: "User Name",
-      errorMessage: "User Name should be 3-16 characters and shouldnt include any special character",
+      errorMessage:
+        "User Name should be 3-16 characters and shouldnt include any special character",
       label: "User Name",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
@@ -38,14 +37,15 @@ function App() {
       name: "birthday",
       type: "date",
       placeholder: "Birthday",
-      label: "Birthday"
+      label: "Birthday",
     },
     {
       id: 4,
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number, 1 special character",
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number, 1 special character",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
@@ -66,10 +66,13 @@ function App() {
     e.preventDefault();
     // const data = new FormData(e.target);
     // console.log(Object.fromEntries(data.entries()));
-  }
+  };
 
   const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value })
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
   };
   console.log(values);
   return (
